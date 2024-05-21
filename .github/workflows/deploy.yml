@@ -14,8 +14,8 @@ jobs:
             - run: npm install --legacy-peer-deps
             # - name: Checkout code
             #   uses: ./.github/actions/roadstat
-            - name: configure aws credentials
-              uses: aws-actions/configure-aws-credentials
+            - uses: aws-actions/configure-aws-credentials
+              name: Configure aws credentials
               with:
                 aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
                 aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
