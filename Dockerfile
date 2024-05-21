@@ -9,7 +9,7 @@ COPY --chown=app:node package*.json .
 USER app
 RUN npm install --legacy-peer-deps
 RUN mkdir node_modules/.cache && chmod -R 777 node_modules/.cache
-COPY . .
+# COPY . .
 CMD ["npm", "start"]
 
 
