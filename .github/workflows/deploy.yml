@@ -25,6 +25,9 @@ jobs:
             - name: Build and Push Docker Image
               run: |  
                 docker build -t roadstat-repo .
-                # docker tag roadstat-repo:latest public.ecr.aws/b1j6b3t7/roadstat-repo:latest
-                # docker push public.ecr.aws/b1j6b3t7/roadstat-repo:latest
+                docker tag roadstat-repo:latest public.ecr.aws/b1j6b3t7/roadstat-repo:latest
+                docker push public.ecr.aws/b1j6b3t7/roadstat-repo:latest
+            - name: Deploy to AWS ECS
+              run: |
+                aws ecs update-service - cluster 'raodstat-cluster' - service 'roadstat-service' - force-new-deployment
 
