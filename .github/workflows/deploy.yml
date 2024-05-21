@@ -7,8 +7,10 @@ jobs:
     deploy:
         runs-on: ubuntu-latest
         steps:
-            - name: Checkout code
+            - name: Checkout
               uses: actions/checkout@v2
+            - name: Checkout code
+              uses: ./.github/actions/roadstat
             - name: configure aws credentials
               uses: aws-actions/configure-aws-credentials
               with:
