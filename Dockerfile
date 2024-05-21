@@ -6,4 +6,5 @@ USER app
 WORKDIR /app
 # WORKDIR /home/node/app
 COPY --chown=app:node package*.json .
+USER app
 RUN npm install
