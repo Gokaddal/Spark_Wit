@@ -7,5 +7,8 @@ WORKDIR /app
 # WORKDIR /home/node/app
 COPY --chown=app:node package*.json .
 USER app
-RUN sudo npm install
+RUN npm install --legacy-peer-deps
+
+CMD ["npm", "start"]
+
 
