@@ -8,6 +8,7 @@ COPY --chown=app:node package*.json .
 RUN npm install --legacy-peer-deps
 RUN mkdir node_modules/.cache && chmod -R 777 node_modules/.cache
 EXPOSE 3000
-CMD ["npm" "start"]
+# CMD ["npm" "start"]
+CMD ["node" "app.js"]
 
 
