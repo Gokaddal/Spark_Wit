@@ -1,14 +1,14 @@
-FROM node:20-alpine
-RUN addgroup app && adduser -S -G app app
-# RUN mkdir -p app/node_modules && chown -R node:node /app
-
-USER app
+FROM node:20.9.0
+# RUN addgroup app && adduser -S -G app app
+# USER app
 WORKDIR /app
-COPY --chown=app:node package*.json .
+COPY package.json ./
+# COPY --chown=app:node package*.json .
 RUN npm install --legacy-peer-deps
-RUN mkdir node_modules/.cache && chmod -R 777 node_modules/.cache
+# RUN mkdir node_modules/.cache && chmod -R 777 node_modules/.cache
+COPY . .
 EXPOSE 3000
-CMD ["npm" "run" "dev"]
+CMD ["npm","run","start"]
 # CMD ["node" "app.js"]
 
 
