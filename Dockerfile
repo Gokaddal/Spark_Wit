@@ -1,6 +1,7 @@
 FROM node:20.9.0
 # RUN addgroup app && adduser -S -G app app
 # USER app
+
 WORKDIR /app
 COPY package.json ./
 # COPY --chown=app:node package*.json .
