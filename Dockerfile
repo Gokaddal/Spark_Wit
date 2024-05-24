@@ -9,6 +9,7 @@ RUN npm install --legacy-peer-deps
 # RUN mkdir node_modules/.cache && chmod -R 777 node_modules/.cache
 COPY . .
 EXPOSE 3000
-CMD ["npm","run","start"]
+EXPOSE 5173
+CMD ["npm","run","dev"]
 
 

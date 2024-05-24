@@ -11,6 +11,14 @@ jobs:
             - uses: actions/setup-node@v4
               with:
                 node-version: '14'
+            - name: Create .env file
+              run: |
+                touch .env
+                VITE_MONGO_URL = mongodb+srv://${{ secrets.MONGODB_USER }}:${{ secrets.MONGODB_PASS }}@roadstat.tnbn7xp.mongodb.net/?retryWrites=true&w=majority&appName=${{ secrets.MONGODB_NAME }}
+                VITE_API_URL = http://localhost:3000/api
+                VITE_GOOGLE_MAP_API=[api key]
+                VITE_OPEN_WEATHER_API=[api key]
+                cat .env
             - name: Build
               run: npm install --legacy-peer-deps
             - uses: aws-actions/configure-aws-credentials@v4
