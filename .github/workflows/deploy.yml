@@ -15,7 +15,7 @@ jobs:
               run: |
                 touch .env
                 echo VITE_MONGO_URL = 'mongodb+srv://${{ secrets.MONGODB_USER }}:${{ secrets.MONGODB_PASS }}@roadstat.tnbn7xp.mongodb.net/?retryWrites=true&w=majority&appName=${{ secrets.MONGODB_NAME }}' >> .env
-                echo VITE_API_URL = http://localhost:3000/api >> .env
+                echo VITE_API_URL = http://track.roadstat.com:3000/api >> .env
                 echo VITE_GOOGLE_MAP_API=[api key] >> .env
                 echo VITE_OPEN_WEATHER_API=[api key] >> .env
                 cat .env
