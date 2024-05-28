@@ -19,9 +19,9 @@ jobs:
                 echo VITE_GOOGLE_MAP_API=[api key] >> .env
                 echo VITE_OPEN_WEATHER_API=[api key] >> .env
                 cat .env
-            # - name: Build
-            #   run: |
-            #     npm install --legacy-peer-deps
+            - name: Build
+              run: |
+                npm install --legacy-peer-deps
             - uses: aws-actions/configure-aws-credentials@v4
               name: Configure aws credentials
               with:
