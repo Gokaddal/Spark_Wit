@@ -38,5 +38,5 @@ jobs:
                 docker push 843257401278.dkr.ecr.us-east-1.amazonaws.com/roadstat:latest
             - name: Deploy to AWS ECS
               run: |
-                aws ecs update-service --cluster 'roadstat-cluster' --service 'roadstat-service' --force-new-deployment
+                aws ecs update-service --cluster 'roadstat-cluster' --service 'roadstat-app-service' --force-new-deployment
 
