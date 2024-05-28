@@ -30,7 +30,7 @@ jobs:
                 aws-region: 'us-east-1'
             - name: Login to AWS ECR
               run: |
-                aws ecr create-repository --repository-name roadstat --region us-east-1 --endpoint-url https://api.ecr.region.amazonaws.com
+                aws ecr create-repository --repository-name roadstat --region us-east-1 --endpoint-url https://api.ecr.us-east-1.amazonaws.com
             #  
             #     aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/b1j6b3t7
             # - name: Build and Push Docker Image
