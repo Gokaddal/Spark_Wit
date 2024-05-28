@@ -30,14 +30,12 @@ jobs:
                 aws-region: 'us-east-1'
             - name: Login to AWS ECR
               run: |
-                aws ecr create-repository --repository-name roadstat --region us-east-1 --endpoint-url https://api.ecr.us-east-1.amazonaws.com
-            #  
-            #     aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/b1j6b3t7
-            # - name: Build and Push Docker Image
-            #   run: |  
-            #     docker build -t roadstat-repo .
-            #     docker tag roadstat-repo:latest public.ecr.aws/b1j6b3t7/roadstat-repo:latest
-            #     docker push public.ecr.aws/b1j6b3t7/roadstat-repo:latest
+               aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 843257401278.dkr.ecr.us-east-1.amazonaws.com
+            - name: Build and Push Docker Image
+              run: |  
+                docker build -t roadstat .
+                docker tag roadstat:latest 843257401278.dkr.ecr.us-east-1.amazonaws.com/roadstat:latest
+                docker push 843257401278.dkr.ecr.us-east-1.amazonaws.com/roadstat:latest
             # - name: Deploy to AWS ECS
             #   run: |
             #     aws ecs update-service --cluster 'roadstat-cluster' --service 'roadstat' --force-new-deployment
