@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { authenticationService } from '@/_services';
 import './loginPage.css';
 
@@ -71,10 +71,14 @@ function LoginPage() {
                         {status &&
                             <div className={'alert alert-danger'}>{status}</div>
                         }
+                        <div>
+                            <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
+                        </div>
                     </Form>
                 )}
 
             </Formik>
+
             </div>
         </div>
     );
